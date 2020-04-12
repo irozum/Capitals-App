@@ -1,15 +1,34 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet, TouchableHighlight} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+import {BlurView} from '@react-native-community/blur';
 
 export default function Home({navigation}) {
+  const [score, setScore] = useState(0);
+  const [continent, setContinent] = useState('All Continents');
+
+  const getScore = async () => {
+    try {
+      const value = await AsyncStorage.getItem('score');
+      setScore(value ? value : 0);
+    } catch (e) {
+      console.log(`Something went wrong: ${e}`);
+    }
+  };
+
+  useEffect(() => {
+    getScore();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <View style={styles.topBar}>
-        <Text style={styles.score}>10</Text>
+      <View style={styles.topArea}>
+        <Text style={styles.scoreText}>Highest Score</Text>
+        <Text style={styles.score}>{score}</Text>
       </View>
       <View style={styles.buttonsView}>
         <TouchableHighlight
-          onPress={() => navigation.navigate('Game', {name: 'Game'})}
+          onPress={() => navigation.navigate('Game', {score: score})}
           style={styles.homeButtons}>
           <Text style={styles.btnText}>Play</Text>
         </TouchableHighlight>
@@ -25,15 +44,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFB041',
     paddingHorizontal: '5%',
   },
-  topBar: {
-    flex: 1,
+  topArea: {
+    flex: 2,
     justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'green',
   },
-  score: {
+  scoreText: {
     fontSize: 30,
   },
+  score: {
+    fontSize: 40,
+  },
   buttonsView: {
-    flex: 8,
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -50,6 +74,7 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   adView: {
-    flex: 1,
+    flex: 2,
+    // backgroundColor: 'red',
   },
 });
