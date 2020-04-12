@@ -1,0 +1,218 @@
+[
+    {
+        "country": "Algeria",
+        "capital": "Alger"
+    },
+    {
+        "country": "Angola",
+        "capital": "Luanda"
+    },
+    {
+        "country": "Benin",
+        "capital": "Porto-Novo"
+    },
+    {
+        "country": "Botswana",
+        "capital": "Gaborone"
+    },
+    {
+        "country": "Burkina Faso",
+        "capital": "Ouagadougou"
+    },
+    {
+        "country": "Burundi",
+        "capital": "Bujumbura"
+    },
+    {
+        "country": "Cameroon",
+        "capital": "Yaound"
+    },
+    {
+        "country": "Cape Verde",
+        "capital": "Praia"
+    },
+    {
+        "country": "Central African Republic",
+        "capital": "Bangui"
+    },
+    {
+        "country": "Chad",
+        "capital": "N'Djam"
+    },
+    {
+        "country": "Comoros",
+        "capital": "Moroni"
+    },
+    {
+        "country": "Congo",
+        "capital": "Brazzaville"
+    },
+    {
+        "country": "Djibouti",
+        "capital": "Djibouti"
+    },
+    {
+        "country": "Egypt",
+        "capital": "Cairo"
+    },
+    {
+        "country": "Equatorial Guinea",
+        "capital": "Malabo"
+    },
+    {
+        "country": "Eritrea",
+        "capital": "Asmara"
+    },
+    {
+        "country": "Ethiopia",
+        "capital": "Addis Abeba"
+    },
+    {
+        "country": "Gabon",
+        "capital": "Libreville"
+    },
+    {
+        "country": "Gambia",
+        "capital": "Banjul"
+    },
+    {
+        "country": "Ghana",
+        "capital": "Accra"
+    },
+    {
+        "country": "Guinea",
+        "capital": "Conakry"
+    },
+    {
+        "country": "Guinea-Bissau",
+        "capital": "Bissau"
+    },
+    {
+        "country": "Ivory Coast",
+        "capital": "Yamoussoukro"
+    },
+    {
+        "country": "Kenya",
+        "capital": "Nairobi"
+    },
+    {
+        "country": "Lesotho",
+        "capital": "Maseru"
+    },
+    {
+        "country": "Liberia",
+        "capital": "Monrovia"
+    },
+    {
+        "country": "Libyan Arab Jamahiriya",
+        "capital": "Tripoli"
+    },
+    {
+        "country": "Madagascar",
+        "capital": "Antananarivo"
+    },
+    {
+        "country": "Malawi",
+        "capital": "Lilongwe"
+    },
+    {
+        "country": "Mali",
+        "capital": "Bamako"
+    },
+    {
+        "country": "Mauritania",
+        "capital": "Nouakchott"
+    },
+    {
+        "country": "Mauritius",
+        "capital": "Port-Louis"
+    },
+    {
+        "country": "Morocco",
+        "capital": "Rabat"
+    },
+    {
+        "country": "Mozambique",
+        "capital": "Maputo"
+    },
+    {
+        "country": "Namibia",
+        "capital": "Windhoek"
+    },
+    {
+        "country": "Niger",
+        "capital": "Niamey"
+    },
+    {
+        "country": "Nigeria",
+        "capital": "Abuja"
+    },
+    {
+        "country": "Reunion",
+        "capital": "Saint-Denis"
+    },
+    {
+        "country": "Rwanda",
+        "capital": "Kigali"
+    },
+    {
+        "country": "Senegal",
+        "capital": "Dakar"
+    },
+    {
+        "country": "Seychelles",
+        "capital": "Victoria"
+    },
+    {
+        "country": "Sierra Leone",
+        "capital": "Freetown"
+    },
+    {
+        "country": "Somalia",
+        "capital": "Mogadishu"
+    },
+    {
+        "country": "South Africa",
+        "capital": "Pretoria"
+    },
+    {
+        "country": "South Sudan",
+        "capital": "Juba"
+    },
+    {
+        "country": "Sudan",
+        "capital": "Khartum"
+    },
+    {
+        "country": "Swaziland",
+        "capital": "Mbabane"
+    },
+    {
+        "country": "Tanzania",
+        "capital": "Dodoma"
+    },
+    {
+        "country": "Togo",
+        "capital": "Lom"
+    },
+    {
+        "country": "Tunisia",
+        "capital": "Tunis"
+    },
+    {
+        "country": "Uganda",
+        "capital": "Kampala"
+    },
+    {
+        "country": "Western Sahara",
+        "capital": "El-Aai"
+    },
+    {
+        "country": "Zambia",
+        "capital": "Lusaka"
+    },
+    {
+        "country": "Zimbabwe",
+        "capital": "Harare"
+    }
+]

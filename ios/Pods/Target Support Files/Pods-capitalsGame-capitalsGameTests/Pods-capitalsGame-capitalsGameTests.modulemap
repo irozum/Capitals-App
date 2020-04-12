@@ -1,0 +1,6 @@
+module Pods_capitalsGame_capitalsGameTests {
+  umbrella header "Pods-capitalsGame-capitalsGameTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
