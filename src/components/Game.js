@@ -8,15 +8,54 @@ import {
 } from 'react-native';
 import {BlurView} from '@react-native-community/blur';
 import AsyncStorage from '@react-native-community/async-storage';
-import Countries from '../countries.json';
+import {Countries} from '../assets/eng/Countries';
+import Icon from 'react-native-vector-icons/AntDesign';
+import Icon1 from 'react-native-vector-icons/Ionicons';
+import Icon2 from 'react-native-vector-icons/Feather';
+
+Icon.loadFont();
+Icon1.loadFont();
+Icon2.loadFont();
 
 export default function Game({route, navigation}) {
-  const [countries, setCountries] = useState([...Countries]);
+  let countriesArray = [];
+  switch (route.params.continent) {
+    case 'All Continents':
+      countriesArray = [
+        ...Countries.africa,
+        ...Countries.asia,
+        ...Countries.australia,
+        ...Countries.europe,
+        ...Countries.northAmerica,
+        ...Countries.southAmerica,
+      ];
+      break;
+    case 'Africa':
+      countriesArray = [...Countries.africa];
+      break;
+    case 'Asia':
+      countriesArray = [...Countries.asia];
+      break;
+    case 'Europe':
+      countriesArray = [...Countries.europe];
+      break;
+    case 'North America':
+      countriesArray = [...Countries.northAmerica];
+      break;
+    case 'South America':
+      countriesArray = [...Countries.southAmerica];
+      break;
+    default:
+      break;
+  }
+
+  const [countries, setCountries] = useState(countriesArray);
   const [country, setCountry] = useState('');
   const [capitals, setCapitals] = useState([]);
   const [capital, setCapital] = useState(null);
   const [score, setScore] = useState(0);
-  const [lives, setLives] = useState(3);
+  // const [lives, setLives] = useState(3);
+  const [lives, setLives] = useState(['life', 'life', 'life']);
   const [cStyles, setCStyles] = useState({});
   const [loading, setLoading] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -78,7 +117,8 @@ export default function Game({route, navigation}) {
       });
       setTimeout(() => {
         setCStyles({}); // changing buttons color back
-        setLives(lives - 1); // removing 1 life
+        lives.shift();
+        setLives(lives); // removing 1 life
         setLoading(false);
       }, 1000);
     }
@@ -95,9 +135,9 @@ export default function Game({route, navigation}) {
   };
 
   const handleRestart = () => {
-    setCountries([...Countries]);
+    setCountries(countriesArray);
     setScore(0);
-    setLives(3);
+    setLives(['life', 'life', 'life']);
     setMenuOpen(false);
   };
 
@@ -130,17 +170,17 @@ export default function Game({route, navigation}) {
           <TouchableHighlight
             onPress={() => setMenuOpen(false)}
             style={styles.menuButtons}>
-            <Text style={styles.btnText}>Resume</Text>
+            <Icon name="right" size={30} color="white" />
           </TouchableHighlight>
           <TouchableHighlight
             onPress={() => handleRestart()}
             style={styles.menuButtons}>
-            <Text style={styles.btnText}>Restart</Text>
+            <Icon2 name="refresh-ccw" size={30} color="white" />
           </TouchableHighlight>
           <TouchableHighlight
             onPress={() => navigation.reset({routes: [{name: 'Home'}]})}
             style={styles.menuButtons}>
-            <Text style={styles.btnText}>Main Menu</Text>
+            <Icon1 name="md-exit" size={30} color="white" />
           </TouchableHighlight>
         </View>
       </View>
@@ -148,12 +188,12 @@ export default function Game({route, navigation}) {
   }
 
   // Win / lose view
-  if (score + (3 - lives) === Countries.length || lives === 0) {
+  if (score + (3 - lives.length) === Countries.length || lives.length === 0) {
     return (
       <View style={styles.finalView}>
         <Text style={styles.finalText}>Score: {score}</Text>
         <Text style={styles.finalText}>
-          {score + (3 - lives) === Countries.length
+          {score + (3 - lives.length) === Countries.length
             ? "Congratulations!\nYou've answered all the questions."
             : "You've lost your lives."}
         </Text>
@@ -181,7 +221,23 @@ export default function Game({route, navigation}) {
             onPress={() => setMenuOpen(true)}>
             <Text style={styles.menuDots}>···</Text>
           </TouchableOpacity>
-          <Text style={styles.lives}>{lives}</Text>
+          <View style={styles.livesView}>
+            <Icon
+              style={styles.life}
+              name={lives[2] ? 'heart' : 'hearto'}
+              size={20}
+            />
+            <Icon
+              style={styles.life}
+              name={lives[1] ? 'heart' : 'hearto'}
+              size={20}
+            />
+            <Icon
+              style={styles.life}
+              name={lives[0] ? 'heart' : 'hearto'}
+              size={20}
+            />
+          </View>
         </View>
         <View style={styles.questionView}>
           <Text style={styles.question}>What is the capital of</Text>
@@ -208,18 +264,26 @@ const styles = StyleSheet.create({
     paddingHorizontal: '5%',
   },
   score: {
+    flex: 1,
     fontSize: 30,
   },
   menu: {
+    flex: 1,
     marginTop: '7%',
+    alignItems: 'center',
   },
   menuDots: {
     fontSize: 30,
     fontWeight: '900',
     marginTop: '8%',
   },
-  lives: {
-    fontSize: 30,
+  livesView: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  life: {
+    paddingLeft: '1%',
   },
   questionView: {
     flex: 3,

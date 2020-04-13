@@ -5,6 +5,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from './src/components/Home';
 import Game from './src/components/Game';
 import {StatusBar} from 'react-native';
+// import Icon from 'react-native-vector-icons/MaterialIcons'
+
+// Icon.loadFont('FontAwesome');
 
 const Stack = createStackNavigator();
 StatusBar.setHidden(true);
