@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableHighlight,
   TouchableOpacity,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import {BlurView} from '@react-native-community/blur';
@@ -120,23 +121,29 @@ export default function Home({navigation}) {
     </TouchableOpacity>
   ));
 
-  let continentsSelectView = null;
+  // let continentsSelectView = null;
   let languagesSelectView = null;
   if (continentsSelect || languagesSelect) {
     languagesSelectView = (
-      <View style={styles.absolute}>
+      <TouchableWithoutFeedback
+        style={styles.absolute}
+        onPress={() => {
+          continentsSelect
+            ? setContinentsSelect(false)
+            : setLanguagesSelect(false);
+        }}>
         <BlurView
           style={styles.absolute}
           blurType="light"
           blurAmount={20}
-          reducedTransparencyFallbackColor="white"
-        />
-        <View style={[styles.blurView, styles.center]}>
-          <View style={styles.flex1View} />
-          <View>{continentsSelect ? listContinents : listLanguages}</View>
-          <View style={styles.flex1View} />
-        </View>
-      </View>
+          reducedTransparencyFallbackColor="white">
+          <View style={[styles.blurView, styles.center]}>
+            <View style={styles.flex1View} />
+            <View>{continentsSelect ? listContinents : listLanguages}</View>
+            <View style={styles.flex1View} />
+          </View>
+        </BlurView>
+      </TouchableWithoutFeedback>
     );
   }
 
@@ -181,7 +188,7 @@ export default function Home({navigation}) {
           </Text>
         </TouchableOpacity>
       </View>
-      {continentsSelectView}
+      {/* {continentsSelectView} */}
       {languagesSelectView}
     </View>
   );

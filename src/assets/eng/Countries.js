@@ -806,6 +806,45 @@ export const Countries = {
       country: 'Colombia',
       capital: 'Bogota',
     },
-    
+    {
+      country: 'Ecuador',
+      capital: 'Quito',
+    },
+    {
+      country: 'Falkland Islands',
+      capital: 'Stanley',
+    },
+    {
+      country: 'French Guiana',
+      capital: 'Cayenne',
+    },
+    {
+      country: 'Guyana',
+      capital: 'Georgetown',
+    },
+    {
+      country: 'Paraguay',
+      capital: 'Asunci',
+    },
+    {
+      country: 'Peru',
+      capital: 'Lima',
+    },
+    {
+      country: 'Suriname',
+      capital: 'Paramaribo',
+    },
+    {
+      country: 'Trinidad and Tobago',
+      capital: 'Port-of-Spain',
+    },
+    {
+      country: 'Uruguay',
+      capital: 'Montevideo',
+    },
+    {
+      country: 'Venezuela',
+      capital: 'Caracas',
+    },
   ],
 };

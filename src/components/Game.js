@@ -58,7 +58,6 @@ export default function Game({route, navigation}) {
             capitals_array.push(countries[index]?.capital);
           }
         } else {
-          console.log(countriesArray.length);
           index = Math.floor(Math.random() * countriesArray.length);
           if (!capitals_array.includes(countriesArray[index].capital)) {
             capitals_array.push(countriesArray[index]?.capital);
@@ -188,23 +187,35 @@ export default function Game({route, navigation}) {
     lives.length === 0
   ) {
     return (
-      <View style={[styles.finalView, styles.center]}>
-        <Text style={styles.finalText}>Score: {score}</Text>
-        <Text style={styles.finalText}>
-          {score + (3 - lives.length) === countriesArray.length
-            ? "Congratulations!\nYou've answered all the questions."
-            : "You've lost your lives."}
-        </Text>
-        <TouchableHighlight
-          onPress={() => handleRestart()}
-          style={styles.menuButtons}>
-          <Icon2 name="refresh-ccw" size={30} color="white" />
-        </TouchableHighlight>
-        <TouchableHighlight
-          onPress={() => navigation.goBack({test: 'test'})}
-          style={styles.menuButtons}>
-          <Icon1 name="md-exit" size={30} color="white" />
-        </TouchableHighlight>
+      <View style={[styles.finalView]}>
+        <View style={styles.flex1View} />
+
+        <View style={[styles.finalScoreView]}>
+          <Text style={styles.finalScoreNum}>{score}</Text>
+        </View>
+
+        <View style={[styles.finalTextView, styles.center]}>
+          <Text style={styles.finalText}>
+            {score + (3 - lives.length) === countriesArray.length
+              ? "Congratulations!\nYou've answered all the questions."
+              : "You've lost your lives."}
+          </Text>
+        </View>
+
+        <View style={[styles.finalBtnView]}>
+          <TouchableHighlight
+            onPress={() => handleRestart()}
+            style={styles.menuButtons}>
+            <Icon2 name="refresh-ccw" size={30} color="white" />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => navigation.goBack({test: 'test'})}
+            style={styles.menuButtons}>
+            <Icon1 name="md-exit" size={30} color="white" />
+          </TouchableHighlight>
+        </View>
+
+        <View style={styles.flex1View} />
       </View>
     );
   }
@@ -297,9 +308,28 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFB041',
   },
+  finalScoreView: {
+    flex: 2,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  finalScore: {
+    fontSize: 30,
+  },
+  finalScoreNum: {
+    fontSize: 60,
+  },
+  finalTextView: {
+    flex: 2,
+  },
   finalText: {
     fontSize: 30,
     textAlign: 'center',
+  },
+  finalBtnView: {
+    flex: 4,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   absolute: {
     position: 'absolute',
@@ -326,5 +356,8 @@ const styles = StyleSheet.create({
   center: {
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  flex1View: {
+    flex: 1,
   },
 });
