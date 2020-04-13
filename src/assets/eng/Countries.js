@@ -1,5 +1,5 @@
 export const Countries = {
-  africa: [
+  Africa: [
     {
       country: 'Algeria',
       capital: 'Alger',
@@ -217,7 +217,7 @@ export const Countries = {
       capital: 'Harare',
     },
   ],
-  asia: [
+  Asia: [
     {
       country: 'Afghanistan',
       capital: 'Kabul',
@@ -415,7 +415,7 @@ export const Countries = {
       capital: 'Sanaa',
     },
   ],
-  australia: [
+  Australia: [
     {
       country: 'Australia',
       capital: 'Canberra',
@@ -433,7 +433,7 @@ export const Countries = {
       capital: 'Kingston',
     },
   ],
-  europe: [
+  Europe: [
     {
       country: 'Albania',
       capital: 'Tirana',
@@ -651,7 +651,7 @@ export const Countries = {
       capital: 'Beograd',
     },
   ],
-  northAmerica: [
+  'North America': [
     {
       country: 'American Samoa',
       capital: 'Fagatogo',
@@ -785,7 +785,7 @@ export const Countries = {
       capital: 'Charlotte Amalie',
     },
   ],
-  southAmerica: [
+  'South America': [
     {
       country: 'Argentina',
       capital: 'Buenos Aires',
@@ -804,47 +804,8 @@ export const Countries = {
     },
     {
       country: 'Colombia',
-      capital: 'Santaf',
+      capital: 'Bogota',
     },
-    {
-      country: 'Ecuador',
-      capital: 'Quito',
-    },
-    {
-      country: 'Falkland Islands',
-      capital: 'Stanley',
-    },
-    {
-      country: 'French Guiana',
-      capital: 'Cayenne',
-    },
-    {
-      country: 'Guyana',
-      capital: 'Georgetown',
-    },
-    {
-      country: 'Paraguay',
-      capital: 'Asunci',
-    },
-    {
-      country: 'Peru',
-      capital: 'Lima',
-    },
-    {
-      country: 'Suriname',
-      capital: 'Paramaribo',
-    },
-    {
-      country: 'Trinidad and Tobago',
-      capital: 'Port-of-Spain',
-    },
-    {
-      country: 'Uruguay',
-      capital: 'Montevideo',
-    },
-    {
-      country: 'Venezuela',
-      capital: 'Caracas',
-    },
+    
   ],
 };

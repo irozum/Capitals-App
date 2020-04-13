@@ -19,34 +19,17 @@ Icon2.loadFont();
 
 export default function Game({route, navigation}) {
   let countriesArray = [];
-  switch (route.params.continent) {
-    case 'All Continents':
-      countriesArray = [
-        ...Countries.africa,
-        ...Countries.asia,
-        ...Countries.australia,
-        ...Countries.europe,
-        ...Countries.northAmerica,
-        ...Countries.southAmerica,
-      ];
-      break;
-    case 'Africa':
-      countriesArray = [...Countries.africa];
-      break;
-    case 'Asia':
-      countriesArray = [...Countries.asia];
-      break;
-    case 'Europe':
-      countriesArray = [...Countries.europe];
-      break;
-    case 'North America':
-      countriesArray = [...Countries.northAmerica];
-      break;
-    case 'South America':
-      countriesArray = [...Countries.southAmerica];
-      break;
-    default:
-      break;
+  if (route.params.continent === 'All Continents') {
+    countriesArray = [
+      ...Countries.Africa,
+      ...Countries.Asia,
+      ...Countries.Australia,
+      ...Countries.Europe,
+      ...Countries['North America'],
+      ...Countries['South America'],
+    ];
+  } else {
+    countriesArray = [...Countries[route.params.continent]];
   }
 
   const [countries, setCountries] = useState(countriesArray);
@@ -54,7 +37,6 @@ export default function Game({route, navigation}) {
   const [capitals, setCapitals] = useState([]);
   const [capital, setCapital] = useState(null);
   const [score, setScore] = useState(0);
-  // const [lives, setLives] = useState(3);
   const [lives, setLives] = useState(['life', 'life', 'life']);
   const [cStyles, setCStyles] = useState({});
   const [loading, setLoading] = useState(false);
@@ -76,20 +58,21 @@ export default function Game({route, navigation}) {
             capitals_array.push(countries[index]?.capital);
           }
         } else {
-          index = Math.floor(Math.random() * Countries.length);
-          if (!capitals_array.includes(Countries[index].capital)) {
-            capitals_array.push(Countries[index]?.capital);
+          console.log(countriesArray.length);
+          index = Math.floor(Math.random() * countriesArray.length);
+          if (!capitals_array.includes(countriesArray[index].capital)) {
+            capitals_array.push(countriesArray[index]?.capital);
           }
         }
       }
 
       // Shuffles array of capitals
-      // for (let i = capitals_array.length - 1; i > 0; i--) {
-      //   const j = Math.floor(Math.random() * (i + 1));
-      //   const x = capitals_array[i];
-      //   capitals_array[i] = capitals_array[j];
-      //   capitals_array[j] = x;
-      // }
+      for (let i = capitals_array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const x = capitals_array[i];
+        capitals_array[i] = capitals_array[j];
+        capitals_array[j] = x;
+      }
       setCapitals(capitals_array);
     } else {
       setCountry(null);
@@ -118,7 +101,7 @@ export default function Game({route, navigation}) {
       setTimeout(() => {
         setCStyles({}); // changing buttons color back
         lives.shift();
-        setLives(lives); // removing 1 life
+        setLives([...lives]); // removing 1 life
         setLoading(false);
       }, 1000);
     }
@@ -150,6 +133,18 @@ export default function Game({route, navigation}) {
     </TouchableHighlight>
   ));
 
+  const listLives = [];
+  for (let i = 2; i !== -1; i--) {
+    listLives.push(
+      <Icon
+        key={i}
+        style={styles.life}
+        name={lives[i] ? 'heart' : 'hearto'}
+        size={20}
+      />,
+    );
+  }
+
   styles.country = {
     fontWeight: '700',
     textAlign: 'center',
@@ -166,7 +161,7 @@ export default function Game({route, navigation}) {
           blurAmount={20}
           reducedTransparencyFallbackColor="white"
         />
-        <View style={styles.blurView}>
+        <View style={[styles.blurView, styles.center]}>
           <TouchableHighlight
             onPress={() => setMenuOpen(false)}
             style={styles.menuButtons}>
@@ -178,7 +173,7 @@ export default function Game({route, navigation}) {
             <Icon2 name="refresh-ccw" size={30} color="white" />
           </TouchableHighlight>
           <TouchableHighlight
-            onPress={() => navigation.reset({routes: [{name: 'Home'}]})}
+            onPress={() => navigation.goBack()}
             style={styles.menuButtons}>
             <Icon1 name="md-exit" size={30} color="white" />
           </TouchableHighlight>
@@ -188,24 +183,27 @@ export default function Game({route, navigation}) {
   }
 
   // Win / lose view
-  if (score + (3 - lives.length) === Countries.length || lives.length === 0) {
+  if (
+    score + (3 - lives.length) === countriesArray.length ||
+    lives.length === 0
+  ) {
     return (
-      <View style={styles.finalView}>
+      <View style={[styles.finalView, styles.center]}>
         <Text style={styles.finalText}>Score: {score}</Text>
         <Text style={styles.finalText}>
-          {score + (3 - lives.length) === Countries.length
+          {score + (3 - lives.length) === countriesArray.length
             ? "Congratulations!\nYou've answered all the questions."
             : "You've lost your lives."}
         </Text>
         <TouchableHighlight
           onPress={() => handleRestart()}
           style={styles.menuButtons}>
-          <Text style={styles.btnText}>Restart</Text>
+          <Icon2 name="refresh-ccw" size={30} color="white" />
         </TouchableHighlight>
         <TouchableHighlight
-          onPress={() => navigation.reset({routes: [{name: 'Home'}]})}
+          onPress={() => navigation.goBack({test: 'test'})}
           style={styles.menuButtons}>
-          <Text style={styles.btnText}>Main Menu</Text>
+          <Icon1 name="md-exit" size={30} color="white" />
         </TouchableHighlight>
       </View>
     );
@@ -221,29 +219,13 @@ export default function Game({route, navigation}) {
             onPress={() => setMenuOpen(true)}>
             <Text style={styles.menuDots}>···</Text>
           </TouchableOpacity>
-          <View style={styles.livesView}>
-            <Icon
-              style={styles.life}
-              name={lives[2] ? 'heart' : 'hearto'}
-              size={20}
-            />
-            <Icon
-              style={styles.life}
-              name={lives[1] ? 'heart' : 'hearto'}
-              size={20}
-            />
-            <Icon
-              style={styles.life}
-              name={lives[0] ? 'heart' : 'hearto'}
-              size={20}
-            />
-          </View>
+          <View style={styles.livesView}>{listLives}</View>
         </View>
-        <View style={styles.questionView}>
+        <View style={[styles.questionView, styles.center]}>
           <Text style={styles.question}>What is the capital of</Text>
           <Text style={styles.country}>{country}</Text>
         </View>
-        <View style={styles.buttonsView}>{listAnswers}</View>
+        <View style={[styles.buttonsView, styles.center]}>{listAnswers}</View>
         <View style={styles.adView} />
       </View>
       {menu}
@@ -287,8 +269,6 @@ const styles = StyleSheet.create({
   },
   questionView: {
     flex: 3,
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: '10%',
   },
   question: {
@@ -297,8 +277,6 @@ const styles = StyleSheet.create({
   },
   buttonsView: {
     flex: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   capitalBtn: {
     backgroundColor: 'black',
@@ -317,8 +295,6 @@ const styles = StyleSheet.create({
   },
   finalView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#FFB041',
   },
   finalText: {
@@ -334,8 +310,6 @@ const styles = StyleSheet.create({
   },
   blurView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   menuButtons: {
     backgroundColor: 'black',
@@ -348,5 +322,9 @@ const styles = StyleSheet.create({
   btnText: {
     fontSize: 30,
     color: 'white',
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

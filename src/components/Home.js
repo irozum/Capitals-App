@@ -15,7 +15,6 @@ const continents = [
   'All Continents',
   'Africa',
   'Asia',
-  'Australia',
   'Europe',
   'North America',
   'South America',
@@ -33,8 +32,37 @@ export default function Home({navigation}) {
   const getData = async () => {
     try {
       const storeScore = await AsyncStorage.getItem('score');
+      const storeContinent = await AsyncStorage.getItem('continent');
       const storeLanguage = await AsyncStorage.getItem('language');
       setScore(storeScore ? storeScore : 0);
+      setContinent(storeContinent ? storeContinent : 'All Continents');
+      setLanguage(storeLanguage ? storeLanguage : 'English');
+    } catch (e) {
+      console.log(`Something went wrong: ${e}`);
+    }
+  };
+
+  const getScore = async () => {
+    try {
+      const storeScore = await AsyncStorage.getItem('score');
+      setScore(storeScore ? storeScore : 0);
+    } catch (e) {
+      console.log(`Something went wrong: ${e}`);
+    }
+  };
+
+  const getContinent = async () => {
+    try {
+      const storeContinent = await AsyncStorage.getItem('continent');
+      setContinent(storeContinent ? storeContinent : 'All Continents');
+    } catch (e) {
+      console.log(`Something went wrong: ${e}`);
+    }
+  };
+
+  const getLanguage = async () => {
+    try {
+      const storeLanguage = await AsyncStorage.getItem('language');
       setLanguage(storeLanguage ? storeLanguage : 'English');
     } catch (e) {
       console.log(`Something went wrong: ${e}`);
@@ -49,12 +77,28 @@ export default function Home({navigation}) {
     }
   };
 
+  const storeContinent = async (cont) => {
+    try {
+      await AsyncStorage.setItem('continent', cont);
+    } catch (e) {
+      console.log(`Something went wrong: ${e}`);
+    }
+  };
+
   useEffect(() => {
-    getData();
+    return navigation.addListener('focus', () => {
+      getScore();
+    });
+  }, [navigation]);
+
+  useEffect(() => {
+    getContinent();
+    getLanguage();
   }, []);
 
   const handleContChange = (cont) => {
     setContinent(cont);
+    storeContinent(cont);
     setContinentsSelect(false);
   };
 
@@ -69,24 +113,6 @@ export default function Home({navigation}) {
       <Text style={styles.optionText}>{cont}</Text>
     </TouchableOpacity>
   ));
-
-  // if (continentsSelect) {
-  //   continentsSelectView = (
-  //     <View style={styles.absolute}>
-  //       <BlurView
-  //         style={styles.absolute}
-  //         blurType="light"
-  //         blurAmount={20}
-  //         reducedTransparencyFallbackColor="white"
-  //       />
-  //       <View style={[styles.blurView, styles.center]}>
-  //         <View style={styles.flex1View} />
-  //         <View>{listContinents}</View>
-  //         <View style={styles.flex1View} />
-  //       </View>
-  //     </View>
-  //   );
-  // }
 
   const listLanguages = languages?.map((lang) => (
     <TouchableOpacity key={lang} onPress={() => handleLangChange(lang)}>
@@ -169,7 +195,6 @@ const styles = StyleSheet.create({
   },
   topArea: {
     flex: 1,
-    // backgroundColor: 'green',
   },
   scoreText: {
     fontSize: 30,
@@ -193,7 +218,6 @@ const styles = StyleSheet.create({
   },
   buttonsView: {
     flex: 1,
-    // backgroundColor: 'blue',
   },
   homeButtons: {
     backgroundColor: 'black',

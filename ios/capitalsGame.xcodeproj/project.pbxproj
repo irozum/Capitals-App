@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* capitalsGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* capitalsGameTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -17,6 +16,8 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* capitalsGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* capitalsGameTests.m */; };
 		434F016532B28A22614961EF /* libPods-capitalsGame-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 409AC118C04336FB1F25D040 /* libPods-capitalsGame-tvOS.a */; };
+		C7233B4A2443FFB600723490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7233B492443FFB600723490 /* LaunchScreen.storyboard */; };
+		C7233B4C2444011800723490 /* New Project.png in Resources */ = {isa = PBXBuildFile; fileRef = C7233B4B2444011800723490 /* New Project.png */; };
 		CBDB3C3E3E9611DF985EED23 /* libPods-capitalsGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D27039C4C4355B9BE886087A /* libPods-capitalsGame.a */; };
 		D9A64BF3B0388A033185FA18 /* libPods-capitalsGame-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E336A95C8187183274E2AC74 /* libPods-capitalsGame-tvOSTests.a */; };
 		F7B8CBF75A2365276C9A08BB /* libPods-capitalsGame-capitalsGameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B227BE579C6A48D614AC34A5 /* libPods-capitalsGame-capitalsGameTests.a */; };
@@ -44,10 +45,9 @@
 		00E356EE1AD99517003FC87E /* capitalsGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = capitalsGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* capitalsGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = capitalsGameTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* capitalsGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = capitalsGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Capitals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capitals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = capitalsGame/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = capitalsGame/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = capitalsGame/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = capitalsGame/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = capitalsGame/main.m; sourceTree = "<group>"; };
@@ -61,6 +61,8 @@
 		A66F812F2B5FDEBE0B0B394B /* Pods-capitalsGame-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capitalsGame-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-capitalsGame-tvOSTests/Pods-capitalsGame-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8398C553A9B63057BEB32BE /* Pods-capitalsGame-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capitalsGame-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-capitalsGame-tvOSTests/Pods-capitalsGame-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B227BE579C6A48D614AC34A5 /* libPods-capitalsGame-capitalsGameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-capitalsGame-capitalsGameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7233B492443FFB600723490 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C7233B4B2444011800723490 /* New Project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New Project.png"; sourceTree = "<group>"; };
 		D0372E11243FE48B53BAFAAC /* Pods-capitalsGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capitalsGame.release.xcconfig"; path = "Target Support Files/Pods-capitalsGame/Pods-capitalsGame.release.xcconfig"; sourceTree = "<group>"; };
 		D2671AAC2BBE5F13D3538A3D /* Pods-capitalsGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capitalsGame.debug.xcconfig"; path = "Target Support Files/Pods-capitalsGame/Pods-capitalsGame.debug.xcconfig"; sourceTree = "<group>"; };
 		D27039C4C4355B9BE886087A /* libPods-capitalsGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-capitalsGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,8 +131,9 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				C7233B492443FFB600723490 /* LaunchScreen.storyboard */,
+				C7233B4B2444011800723490 /* New Project.png */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = capitalsGame;
@@ -174,7 +177,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* capitalsGame.app */,
+				13B07F961A680F5B00A75B9A /* Capitals.app */,
 				00E356EE1AD99517003FC87E /* capitalsGameTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* capitalsGame-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* capitalsGame-tvOSTests.xctest */,
@@ -194,7 +197,6 @@
 				A8398C553A9B63057BEB32BE /* Pods-capitalsGame-tvOSTests.debug.xcconfig */,
 				A66F812F2B5FDEBE0B0B394B /* Pods-capitalsGame-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -239,7 +241,7 @@
 			);
 			name = capitalsGame;
 			productName = capitalsGame;
-			productReference = 13B07F961A680F5B00A75B9A /* capitalsGame.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Capitals.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E47A1E0B4A5D006451C7 /* capitalsGame-tvOS */ = {
@@ -294,6 +296,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = ZSV8249NG4;
 						LastSwiftMigration = 1120;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -341,7 +344,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				C7233B4C2444011800723490 /* New Project.png in Resources */,
+				C7233B4A2443FFB600723490 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,18 +669,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = capitalsGame;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -728,6 +720,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZSV8249NG4;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -740,8 +733,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = capitalsGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorrozum.Capitals;
+				PRODUCT_NAME = Capitals;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -755,6 +748,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZSV8249NG4;
 				INFOPLIST_FILE = capitalsGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -762,8 +756,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = capitalsGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorrozum.Capitals;
+				PRODUCT_NAME = Capitals;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
