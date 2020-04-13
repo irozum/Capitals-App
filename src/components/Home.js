@@ -30,19 +30,6 @@ export default function Home({navigation}) {
   const [language, setLanguage] = useState('English');
   const [languagesSelect, setLanguagesSelect] = useState(false);
 
-  const getData = async () => {
-    try {
-      const storeScore = await AsyncStorage.getItem('score');
-      const storeContinent = await AsyncStorage.getItem('continent');
-      const storeLanguage = await AsyncStorage.getItem('language');
-      setScore(storeScore ? storeScore : 0);
-      setContinent(storeContinent ? storeContinent : 'All Continents');
-      setLanguage(storeLanguage ? storeLanguage : 'English');
-    } catch (e) {
-      console.log(`Something went wrong: ${e}`);
-    }
-  };
-
   const getScore = async () => {
     try {
       const storeScore = await AsyncStorage.getItem('score');
