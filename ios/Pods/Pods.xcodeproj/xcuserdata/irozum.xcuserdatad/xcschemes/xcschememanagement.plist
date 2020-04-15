@@ -99,6 +99,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RCTRestart.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RCTTypeSafety.xcscheme</key>
 		<dict>
 			<key>isShown</key>

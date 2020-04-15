@@ -8,26 +8,22 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import RNRestart from 'react-native-restart';
+import {langData} from '../assets/langData';
 import {BlurView} from '@react-native-community/blur';
 import Icon from 'react-native-vector-icons/AntDesign';
 Icon.loadFont();
 
-const continents = [
-  'All Continents',
-  'Africa',
-  'Asia',
-  'Europe',
-  'North America',
-  'South America',
-];
+export default function Home({route, navigation}) {
+  const data = langData[route.params.language];
 
-const languages = ['English', 'Russian'];
+  const continents = data.continents;
+  const languages = data.langList;
 
-export default function Home({navigation}) {
   const [score, setScore] = useState(0);
-  const [continent, setContinent] = useState('All Continents');
+  const [continent, setContinent] = useState(data.continents[0]);
   const [continentsSelect, setContinentsSelect] = useState(false);
-  const [language, setLanguage] = useState('English');
+  const [language, setLanguage] = useState(data.langName);
   const [languagesSelect, setLanguagesSelect] = useState(false);
 
   const getScore = async () => {
@@ -39,27 +35,11 @@ export default function Home({navigation}) {
     }
   };
 
-  const getContinent = async () => {
-    try {
-      const storeContinent = await AsyncStorage.getItem('continent');
-      setContinent(storeContinent ? storeContinent : 'All Continents');
-    } catch (e) {
-      console.log(`Something went wrong: ${e}`);
-    }
-  };
-
-  const getLanguage = async () => {
-    try {
-      const storeLanguage = await AsyncStorage.getItem('language');
-      setLanguage(storeLanguage ? storeLanguage : 'English');
-    } catch (e) {
-      console.log(`Something went wrong: ${e}`);
-    }
-  };
-
   const storeLanguage = async (lang) => {
+    const index = data.langList.indexOf(lang);
+    const langInEng = langData.English.langList[index];
     try {
-      await AsyncStorage.setItem('language', lang);
+      await AsyncStorage.setItem('language', langInEng);
     } catch (e) {
       console.log(`Something went wrong: ${e}`);
     }
@@ -79,11 +59,6 @@ export default function Home({navigation}) {
     });
   }, [navigation]);
 
-  useEffect(() => {
-    getContinent();
-    getLanguage();
-  }, []);
-
   const handleContChange = (cont) => {
     setContinent(cont);
     storeContinent(cont);
@@ -94,6 +69,7 @@ export default function Home({navigation}) {
     setLanguage(lang);
     storeLanguage(lang);
     setLanguagesSelect(false);
+    RNRestart.Restart();
   };
 
   const listContinents = continents?.map((cont) => (
@@ -108,7 +84,6 @@ export default function Home({navigation}) {
     </TouchableOpacity>
   ));
 
-  // let continentsSelectView = null;
   let languagesSelectView = null;
   if (continentsSelect || languagesSelect) {
     languagesSelectView = (
@@ -138,7 +113,7 @@ export default function Home({navigation}) {
     <View style={styles.container}>
       {/* Highest score */}
       <View style={[styles.topArea, styles.center]}>
-        <Text style={styles.scoreText}>Highest Score</Text>
+        <Text style={styles.scoreText}>{data.highestScore}</Text>
         <Text style={styles.score}>{score}</Text>
       </View>
 
@@ -159,13 +134,13 @@ export default function Home({navigation}) {
           <TouchableHighlight
             onPress={() => navigation.navigate('Game', {score, continent})}
             style={styles.homeButtons}>
-            <Text style={styles.btnText}>Play</Text>
+            <Text style={styles.btnText}>{data.playBtn}</Text>
           </TouchableHighlight>
         </View>
         <View style={styles.flex1View} />
       </View>
 
-      {/* Select continent */}
+      {/* Select language */}
       <View style={[styles.bottomView, styles.center]}>
         <TouchableOpacity
           style={styles.selectBtn}

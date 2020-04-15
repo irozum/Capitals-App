@@ -129,7 +129,14 @@ export default function Game({route, navigation}) {
       key={capitalName}
       style={[styles.capitalBtn, cStyles[capitalName]]}
       onPress={() => handleAnswer(capitalName)}>
-      <Text style={styles.capitalTxt}>{capitalName}</Text>
+      <Text
+        style={[
+          styles.capitalTxt,
+          // eslint-disable-next-line react-native/no-inline-styles
+          capitalName.length >= 20 && {fontSize: 25},
+        ]}>
+        {capitalName}
+      </Text>
     </TouchableHighlight>
   ));
 
@@ -303,6 +310,7 @@ const styles = StyleSheet.create({
   capitalTxt: {
     fontSize: 30,
     color: 'white',
+    textAlign: 'center',
   },
   adView: {
     flex: 1,
