@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react'
 import {
   View,
   Text,
@@ -6,85 +6,85 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   TouchableWithoutFeedback,
-} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
-import RNRestart from 'react-native-restart';
-import {langData} from '../assets/langData';
-import {BlurView} from '@react-native-community/blur';
-import Icon from 'react-native-vector-icons/AntDesign';
-Icon.loadFont();
+} from 'react-native'
+import AsyncStorage from '@react-native-community/async-storage'
+import RNRestart from 'react-native-restart'
+import { langData } from '../assets/langData'
+import { BlurView } from '@react-native-community/blur'
+import Icon from 'react-native-vector-icons/AntDesign'
+Icon.loadFont()
 
-export default function Home({route, navigation}) {
-  const data = langData[route.params.language];
+export default function Home({ route, navigation }) {
+  const data = langData[route.params.language]
 
-  const continents = data.continents;
-  const languages = data.langList;
+  const continents = data.continents
+  const languages = data.langList
 
-  const [score, setScore] = useState(0);
-  const [continent, setContinent] = useState(data.continents[0]);
-  const [continentsSelect, setContinentsSelect] = useState(false);
-  const [language, setLanguage] = useState(data.langName);
-  const [languagesSelect, setLanguagesSelect] = useState(false);
+  const [score, setScore] = useState(0)
+  const [continent, setContinent] = useState(data.continents[0])
+  const [continentsSelect, setContinentsSelect] = useState(false)
+  const [language, setLanguage] = useState(data.langName)
+  const [languagesSelect, setLanguagesSelect] = useState(false)
 
   const getScore = async () => {
     try {
-      const storeScore = await AsyncStorage.getItem('score');
-      setScore(storeScore ? storeScore : 0);
+      const storeScore = await AsyncStorage.getItem('score')
+      setScore(storeScore ? storeScore : 0)
     } catch (e) {
-      console.log(`Something went wrong: ${e}`);
+      console.log(`Something went wrong: ${e}`)
     }
-  };
+  }
 
   const storeLanguage = async (lang) => {
-    const index = data.langList.indexOf(lang);
-    const langInEng = langData.English.langList[index];
+    const index = data.langList.indexOf(lang)
+    const langInEng = langData.English.langList[index]
     try {
-      await AsyncStorage.setItem('language', langInEng);
+      await AsyncStorage.setItem('language', langInEng)
     } catch (e) {
-      console.log(`Something went wrong: ${e}`);
+      console.log(`Something went wrong: ${e}`)
     }
-  };
+  }
 
   const storeContinent = async (cont) => {
     try {
-      await AsyncStorage.setItem('continent', cont);
+      await AsyncStorage.setItem('continent', cont)
     } catch (e) {
-      console.log(`Something went wrong: ${e}`);
+      console.log(`Something went wrong: ${e}`)
     }
-  };
+  }
 
   useEffect(() => {
     return navigation.addListener('focus', () => {
-      getScore();
-    });
-  }, [navigation]);
+      getScore()
+    })
+  }, [navigation])
 
   const handleContChange = (cont) => {
-    setContinent(cont);
-    storeContinent(cont);
-    setContinentsSelect(false);
-  };
+    setContinent(cont)
+    storeContinent(cont)
+    setContinentsSelect(false)
+  }
 
   const handleLangChange = (lang) => {
-    setLanguage(lang);
-    storeLanguage(lang);
-    setLanguagesSelect(false);
-    RNRestart.Restart();
-  };
+    setLanguage(lang)
+    storeLanguage(lang)
+    setLanguagesSelect(false)
+    RNRestart.Restart()
+  }
 
   const listContinents = continents?.map((cont) => (
     <TouchableOpacity key={cont} onPress={() => handleContChange(cont)}>
       <Text style={styles.optionText}>{cont}</Text>
     </TouchableOpacity>
-  ));
+  ))
 
   const listLanguages = languages?.map((lang) => (
     <TouchableOpacity key={lang} onPress={() => handleLangChange(lang)}>
       <Text style={styles.optionText}>{lang}</Text>
     </TouchableOpacity>
-  ));
+  ))
 
-  let languagesSelectView = null;
+  let languagesSelectView = null
   if (continentsSelect || languagesSelect) {
     languagesSelectView = (
       <TouchableWithoutFeedback
@@ -92,7 +92,7 @@ export default function Home({route, navigation}) {
         onPress={() => {
           continentsSelect
             ? setContinentsSelect(false)
-            : setLanguagesSelect(false);
+            : setLanguagesSelect(false)
         }}>
         <BlurView
           style={styles.absolute}
@@ -106,7 +106,7 @@ export default function Home({route, navigation}) {
           </View>
         </BlurView>
       </TouchableWithoutFeedback>
-    );
+    )
   }
 
   return (
@@ -132,7 +132,7 @@ export default function Home({route, navigation}) {
         {/* Play button */}
         <View style={[styles.buttonsView, styles.center]}>
           <TouchableHighlight
-            onPress={() => navigation.navigate('Game', {score, continent})}
+            onPress={() => navigation.navigate('Game', { score, continent })}
             style={styles.homeButtons}>
             <Text style={styles.btnText}>{data.playBtn}</Text>
           </TouchableHighlight>
@@ -153,7 +153,7 @@ export default function Home({route, navigation}) {
       {/* {continentsSelectView} */}
       {languagesSelectView}
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -227,4 +227,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-});
+})
