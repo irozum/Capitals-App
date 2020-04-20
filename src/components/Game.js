@@ -159,7 +159,8 @@ export default function Game({ route, navigation }) {
     fontWeight: '700',
     textAlign: 'center',
   }
-  styles.country.fontSize = country?.length <= 15 ? 50 : 35
+  const breakingLength = data.langName === 'English' ? 15 : 10
+  styles.country.fontSize = country?.length <= breakingLength ? 50 : 35
 
   let menu = null
   if (menuOpen) {
