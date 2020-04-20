@@ -9,7 +9,8 @@ import {
 } from 'react-native'
 import { BlurView } from '@react-native-community/blur'
 import AsyncStorage from '@react-native-community/async-storage'
-import { Countries } from '../assets/countriesEng'
+import { langData } from '../assets/langData'
+import { func } from '../helpers/functions'
 import Icon from 'react-native-vector-icons/AntDesign'
 import Icon1 from 'react-native-vector-icons/Ionicons'
 import Icon2 from 'react-native-vector-icons/Feather'
@@ -19,8 +20,12 @@ Icon1.loadFont()
 Icon2.loadFont()
 
 export default function Game({ route, navigation }) {
+  const data = langData[func.langToEng(route.params.language)]
+  const Countries = data.countries
+  const continent = func.contToEng(data.continents, route.params.continent)
+
   let countriesArray = []
-  if (route.params.continent === 'All Continents') {
+  if (route.params.continent === data.continents[0]) {
     countriesArray = [
       ...Countries.Africa,
       ...Countries.Asia,
@@ -30,7 +35,7 @@ export default function Game({ route, navigation }) {
       ...Countries['South America'],
     ]
   } else {
-    countriesArray = [...Countries[route.params.continent]]
+    countriesArray = [...Countries[continent]]
   }
 
   const [countries, setCountries] = useState(countriesArray)
@@ -78,7 +83,6 @@ export default function Game({ route, navigation }) {
       setCountry(null)
       setCapitals(null)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [score, lives])
 
   const handleAnswer = (answer) => {
@@ -132,7 +136,6 @@ export default function Game({ route, navigation }) {
       <Text
         style={[
           styles.capitalTxt,
-          // eslint-disable-next-line react-native/no-inline-styles
           capitalName.length >= 20 && { fontSize: 25 },
         ]}>
         {capitalName}
@@ -206,9 +209,7 @@ export default function Game({ route, navigation }) {
 
         <View style={[styles.finalTextView, styles.center]}>
           <Text style={styles.finalText}>
-            {score + (3 - lives.length) === countriesArray.length
-              ? "Congratulations!\nYou've answered all the questions."
-              : "You've lost your lives."}
+            {score + (3 - lives.length) === countriesArray.length ? data.winTxt : data.lossTxt}
           </Text>
         </View>
 
@@ -243,7 +244,7 @@ export default function Game({ route, navigation }) {
           <View style={styles.livesView}>{listLives}</View>
         </View>
         <View style={[styles.questionView, styles.center]}>
-          <Text style={styles.question}>What is the capital of</Text>
+          <Text style={styles.question}>{data.questionTxt}</Text>
           <Text style={styles.country}>{country}</Text>
         </View>
         <View style={[styles.buttonsView, styles.center]}>{listAnswers}</View>

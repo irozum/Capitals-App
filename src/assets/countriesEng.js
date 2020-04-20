@@ -1,4 +1,4 @@
-export const Countries = {
+export default Countries = {
   Africa: [
     {
       country: 'Algeria',

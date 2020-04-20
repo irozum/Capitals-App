@@ -132,7 +132,7 @@ export default function Home({ route, navigation }) {
         {/* Play button */}
         <View style={[styles.buttonsView, styles.center]}>
           <TouchableHighlight
-            onPress={() => navigation.navigate('Game', { score, continent })}
+            onPress={() => navigation.navigate('Game', { language, score, continent })}
             style={styles.homeButtons}>
             <Text style={styles.btnText}>{data.playBtn}</Text>
           </TouchableHighlight>

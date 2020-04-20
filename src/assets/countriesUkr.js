@@ -1,4 +1,4 @@
-export const Countries = {
+export default Countries = {
     Африка: [
       {
         country: 'Алжир',
@@ -89,7 +89,7 @@ export const Countries = {
         capital: 'Бісау',
       },
       {
-        country: 'Кот-д'Івуар',
+        country: 'Кот-д\'Івуар',
         capital: 'Ямусукро',
       },
       {
@@ -738,7 +738,7 @@ export const Countries = {
         capital: 'Кастрі',
       },
       {
-        country: 'Сен-П'єр і Мікелон',
+        country: 'Сен-П\'єр і Мікелон',
         capital: 'Сен-П’єр',
       },
       {
