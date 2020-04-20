@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableHighlight,
   TouchableOpacity,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import {BlurView} from '@react-native-community/blur';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -128,7 +129,14 @@ export default function Game({route, navigation}) {
       key={capitalName}
       style={[styles.capitalBtn, cStyles[capitalName]]}
       onPress={() => handleAnswer(capitalName)}>
-      <Text style={styles.capitalTxt}>{capitalName}</Text>
+      <Text
+        style={[
+          styles.capitalTxt,
+          // eslint-disable-next-line react-native/no-inline-styles
+          capitalName.length >= 20 && {fontSize: 25},
+        ]}>
+        {capitalName}
+      </Text>
     </TouchableHighlight>
   ));
 
@@ -153,31 +161,33 @@ export default function Game({route, navigation}) {
   let menu = null;
   if (menuOpen) {
     menu = (
-      <View style={styles.absolute}>
+      <TouchableWithoutFeedback
+        style={styles.absolute}
+        onPress={() => setMenuOpen(false)}>
         <BlurView
           style={styles.absolute}
           blurType="light"
           blurAmount={20}
-          reducedTransparencyFallbackColor="white"
-        />
-        <View style={[styles.blurView, styles.center]}>
-          <TouchableHighlight
-            onPress={() => setMenuOpen(false)}
-            style={styles.menuButtons}>
-            <Icon name="right" size={30} color="white" />
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={() => handleRestart()}
-            style={styles.menuButtons}>
-            <Icon2 name="refresh-ccw" size={30} color="white" />
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={() => navigation.goBack()}
-            style={styles.menuButtons}>
-            <Icon1 name="md-exit" size={30} color="white" />
-          </TouchableHighlight>
-        </View>
-      </View>
+          reducedTransparencyFallbackColor="white">
+          <View style={[styles.blurView, styles.center]}>
+            <TouchableHighlight
+              onPress={() => setMenuOpen(false)}
+              style={styles.menuButtons}>
+              <Icon name="right" size={30} color="white" />
+            </TouchableHighlight>
+            <TouchableHighlight
+              onPress={() => handleRestart()}
+              style={styles.menuButtons}>
+              <Icon2 name="refresh-ccw" size={30} color="white" />
+            </TouchableHighlight>
+            <TouchableHighlight
+              onPress={() => navigation.goBack()}
+              style={styles.menuButtons}>
+              <Icon1 name="md-exit" size={30} color="white" />
+            </TouchableHighlight>
+          </View>
+        </BlurView>
+      </TouchableWithoutFeedback>
     );
   }
 
@@ -300,6 +310,7 @@ const styles = StyleSheet.create({
   capitalTxt: {
     fontSize: 30,
     color: 'white',
+    textAlign: 'center',
   },
   adView: {
     flex: 1,
