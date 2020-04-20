@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react'
 import {
   View,
   Text,
@@ -6,20 +6,20 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   TouchableWithoutFeedback,
-} from 'react-native';
-import {BlurView} from '@react-native-community/blur';
-import AsyncStorage from '@react-native-community/async-storage';
-import {Countries} from '../assets/eng/Countries';
-import Icon from 'react-native-vector-icons/AntDesign';
-import Icon1 from 'react-native-vector-icons/Ionicons';
-import Icon2 from 'react-native-vector-icons/Feather';
+} from 'react-native'
+import { BlurView } from '@react-native-community/blur'
+import AsyncStorage from '@react-native-community/async-storage'
+import { Countries } from '../assets/countriesEng'
+import Icon from 'react-native-vector-icons/AntDesign'
+import Icon1 from 'react-native-vector-icons/Ionicons'
+import Icon2 from 'react-native-vector-icons/Feather'
 
-Icon.loadFont();
-Icon1.loadFont();
-Icon2.loadFont();
+Icon.loadFont()
+Icon1.loadFont()
+Icon2.loadFont()
 
-export default function Game({route, navigation}) {
-  let countriesArray = [];
+export default function Game({ route, navigation }) {
+  let countriesArray = []
   if (route.params.continent === 'All Continents') {
     countriesArray = [
       ...Countries.Africa,
@@ -28,101 +28,101 @@ export default function Game({route, navigation}) {
       ...Countries.Europe,
       ...Countries['North America'],
       ...Countries['South America'],
-    ];
+    ]
   } else {
-    countriesArray = [...Countries[route.params.continent]];
+    countriesArray = [...Countries[route.params.continent]]
   }
 
-  const [countries, setCountries] = useState(countriesArray);
-  const [country, setCountry] = useState('');
-  const [capitals, setCapitals] = useState([]);
-  const [capital, setCapital] = useState(null);
-  const [score, setScore] = useState(0);
-  const [lives, setLives] = useState(['life', 'life', 'life']);
-  const [cStyles, setCStyles] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [countries, setCountries] = useState(countriesArray)
+  const [country, setCountry] = useState('')
+  const [capitals, setCapitals] = useState([])
+  const [capital, setCapital] = useState(null)
+  const [score, setScore] = useState(0)
+  const [lives, setLives] = useState(['life', 'life', 'life'])
+  const [cStyles, setCStyles] = useState({})
+  const [loading, setLoading] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     if (countries.length > 0) {
-      let index = Math.floor(Math.random() * countries.length);
-      setCountry(countries[index]?.country);
-      const capitalTmp = countries[index]?.capital;
-      setCapital(capitalTmp);
-      countries.splice(index, 1);
-      setCountries([...countries]);
-      let capitals_array = [capitalTmp];
+      let index = Math.floor(Math.random() * countries.length)
+      setCountry(countries[index]?.country)
+      const capitalTmp = countries[index]?.capital
+      setCapital(capitalTmp)
+      countries.splice(index, 1)
+      setCountries([...countries])
+      let capitals_array = [capitalTmp]
       while (capitals_array.length < 4) {
         if (countries.length > 4) {
-          index = Math.floor(Math.random() * countries.length);
+          index = Math.floor(Math.random() * countries.length)
           if (!capitals_array.includes(countries[index].capital)) {
-            capitals_array.push(countries[index]?.capital);
+            capitals_array.push(countries[index]?.capital)
           }
         } else {
-          index = Math.floor(Math.random() * countriesArray.length);
+          index = Math.floor(Math.random() * countriesArray.length)
           if (!capitals_array.includes(countriesArray[index].capital)) {
-            capitals_array.push(countriesArray[index]?.capital);
+            capitals_array.push(countriesArray[index]?.capital)
           }
         }
       }
 
       // Shuffles array of capitals
       for (let i = capitals_array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const x = capitals_array[i];
-        capitals_array[i] = capitals_array[j];
-        capitals_array[j] = x;
+        const j = Math.floor(Math.random() * (i + 1))
+        const x = capitals_array[i]
+        capitals_array[i] = capitals_array[j]
+        capitals_array[j] = x
       }
-      setCapitals(capitals_array);
+      setCapitals(capitals_array)
     } else {
-      setCountry(null);
-      setCapitals(null);
+      setCountry(null)
+      setCapitals(null)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [score, lives]);
+  }, [score, lives])
 
   const handleAnswer = (answer) => {
-    setLoading(true);
+    setLoading(true)
     if (answer === capital) {
-      setCStyles({...cStyles, [answer]: {backgroundColor: '#59B86A'}}); // making the button green
-      updateHighestScore(score + 1); // saving the score to the store
+      setCStyles({ ...cStyles, [answer]: { backgroundColor: '#59B86A' } }) // making the button green
+      updateHighestScore(score + 1) // saving the score to the store
       setTimeout(() => {
-        setCStyles({});
-        setScore(score + 1); // updating score
-        setLoading(false);
-      }, 1000);
+        setCStyles({})
+        setScore(score + 1) // updating score
+        setLoading(false)
+      }, 1000)
     } else {
       setCStyles({
         // changing buttons' color
         ...cStyles,
-        [answer]: {backgroundColor: '#D26D6A'},
-        [capital]: {backgroundColor: '#59B86A'},
-      });
+        [answer]: { backgroundColor: '#D26D6A' },
+        [capital]: { backgroundColor: '#59B86A' },
+      })
       setTimeout(() => {
-        setCStyles({}); // changing buttons color back
-        lives.shift();
-        setLives([...lives]); // removing 1 life
-        setLoading(false);
-      }, 1000);
+        setCStyles({}) // changing buttons color back
+        lives.shift()
+        setLives([...lives]) // removing 1 life
+        setLoading(false)
+      }, 1000)
     }
-  };
+  }
 
   const updateHighestScore = async (scoreNew) => {
     if (scoreNew > route.params.score) {
       try {
-        await AsyncStorage.setItem('score', JSON.stringify(scoreNew));
+        await AsyncStorage.setItem('score', JSON.stringify(scoreNew))
       } catch (e) {
-        console.log(`Something went wrong: ${e}`);
+        console.log(`Something went wrong: ${e}`)
       }
     }
-  };
+  }
 
   const handleRestart = () => {
-    setCountries(countriesArray);
-    setScore(0);
-    setLives(['life', 'life', 'life']);
-    setMenuOpen(false);
-  };
+    setCountries(countriesArray)
+    setScore(0)
+    setLives(['life', 'life', 'life'])
+    setMenuOpen(false)
+  }
 
   const listAnswers = capitals?.map((capitalName) => (
     <TouchableHighlight
@@ -133,14 +133,14 @@ export default function Game({route, navigation}) {
         style={[
           styles.capitalTxt,
           // eslint-disable-next-line react-native/no-inline-styles
-          capitalName.length >= 20 && {fontSize: 25},
+          capitalName.length >= 20 && { fontSize: 25 },
         ]}>
         {capitalName}
       </Text>
     </TouchableHighlight>
-  ));
+  ))
 
-  const listLives = [];
+  const listLives = []
   for (let i = 2; i !== -1; i--) {
     listLives.push(
       <Icon
@@ -149,16 +149,16 @@ export default function Game({route, navigation}) {
         name={lives[i] ? 'heart' : 'hearto'}
         size={20}
       />,
-    );
+    )
   }
 
   styles.country = {
     fontWeight: '700',
     textAlign: 'center',
-  };
-  styles.country.fontSize = country?.length <= 15 ? 50 : 35;
+  }
+  styles.country.fontSize = country?.length <= 15 ? 50 : 35
 
-  let menu = null;
+  let menu = null
   if (menuOpen) {
     menu = (
       <TouchableWithoutFeedback
@@ -188,7 +188,7 @@ export default function Game({route, navigation}) {
           </View>
         </BlurView>
       </TouchableWithoutFeedback>
-    );
+    )
   }
 
   // Win / lose view
@@ -219,7 +219,7 @@ export default function Game({route, navigation}) {
             <Icon2 name="refresh-ccw" size={30} color="white" />
           </TouchableHighlight>
           <TouchableHighlight
-            onPress={() => navigation.goBack({test: 'test'})}
+            onPress={() => navigation.goBack({ test: 'test' })}
             style={styles.menuButtons}>
             <Icon1 name="md-exit" size={30} color="white" />
           </TouchableHighlight>
@@ -227,7 +227,7 @@ export default function Game({route, navigation}) {
 
         <View style={styles.flex1View} />
       </View>
-    );
+    )
   }
 
   return (
@@ -251,7 +251,7 @@ export default function Game({route, navigation}) {
       </View>
       {menu}
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -371,4 +371,4 @@ const styles = StyleSheet.create({
   flex1View: {
     flex: 1,
   },
-});
+})
