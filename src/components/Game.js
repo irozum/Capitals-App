@@ -330,7 +330,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   finalScoreNum: {
-    fontSize: 60,
+    fontSize: 80,
   },
   finalTextView: {
     flex: 2,

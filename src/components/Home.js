@@ -113,7 +113,7 @@ export default function Home({ route, navigation }) {
     <View style={styles.container}>
       {/* Highest score */}
       <View style={[styles.topArea, styles.center]}>
-        <Text style={styles.scoreText}>{data.highestScore}</Text>
+        {/* <Text style={styles.scoreText}>{data.highestScore}</Text> */}
         <Text style={styles.score}>{score}</Text>
       </View>
 
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   score: {
-    fontSize: 40,
+    fontSize: 80,
   },
   middleView: {
     flex: 1,
