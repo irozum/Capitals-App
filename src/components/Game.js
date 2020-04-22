@@ -234,7 +234,7 @@ export default function Game({ route, navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.container} pointerEvents={loading && 'none'}>
+      <View style={styles.container} >
         <View style={styles.topBar}>
           <Text style={styles.score}>{score}</Text>
           <TouchableOpacity

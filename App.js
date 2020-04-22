@@ -30,13 +30,11 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={Home}
-            initialParams={{language}}
-          />
+            initialParams={{language}} />
           <Stack.Screen
             name="Game"
             component={Game}
-            initialParams={{language}}
-          />
+            initialParams={{language}} />
         </Stack.Navigator>
       </NavigationContainer>
     )
