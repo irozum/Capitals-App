@@ -1,4 +1,4 @@
-#Wed Apr 22 14:17:48 EDT 2020
+#Wed Apr 22 20:24:41 EDT 2020
 base.0=/Users/irozum/Dev/React Native/capitalsGame/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
