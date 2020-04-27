@@ -12,57 +12,65 @@
 11-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/debug/AndroidManifest.xml:5:5-77
 11-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/debug/AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:4:5-67
-12-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:4:22-64
+12-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:33:5-67
+12-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:33:22-64
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 13-->[com.facebook.flipper:flipper:0.33.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/a7739ea300dde2aff608f82635cf2701/jetified-flipper-0.33.1/AndroidManifest.xml:16:5-76
 13-->[com.facebook.flipper:flipper:0.33.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/a7739ea300dde2aff608f82635cf2701/jetified-flipper-0.33.1/AndroidManifest.xml:16:22-73
 14
 15    <application
-15-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:6:5-25:19
+15-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:35:5-63:19
 16        android:name="com.capitalsgame.MainApplication"
-16-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:7:7-38
+16-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:36:7-38
 17        android:allowBackup="false"
-17-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:11:7-34
+17-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:40:7-34
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 18-->[androidx.core:core:1.1.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/4f509a65121478d6153615d7ef5b7c5f/core-1.1.0/AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
-20-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:9:7-41
+20-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:38:7-41
 21        android:label="@string/app_name"
-21-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:8:7-39
+21-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:37:7-39
 22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:10:7-52
+22-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:39:7-52
 23        android:theme="@style/AppTheme"
-23-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:12:7-38
-24        android:usesCleartextTraffic="true" >
+23-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:41:7-38
+24        android:usesCleartextTraffic="true" > <!-- Add this SplashActivity -->
 24-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/debug/AndroidManifest.xml:7:18-53
 25        <activity
-25-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:13:7-23:18
-26            android:name="com.capitalsgame.MainActivity"
-26-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:14:9-37
-27            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-27-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:16:9-86
-28            android:label="@string/app_name"
-28-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:15:9-41
-29            android:launchMode="singleTask"
-29-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:17:9-40
-30            android:windowSoftInputMode="adjustResize" >
-30-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:18:9-51
-31            <intent-filter>
-31-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:19:9-22:25
-32                <action android:name="android.intent.action.MAIN" />
-32-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:20:13-65
-32-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:20:21-62
-33
-34                <category android:name="android.intent.category.LAUNCHER" />
-34-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:21:13-73
-34-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:21:23-70
-35            </intent-filter>
-36        </activity>
-37        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-37-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:24:7-84
-37-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:24:17-81
-38    </application>
-39
-40</manifest>
+25-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:44:9-52:20
+26            android:name="com.capitalsgame.SplashActivity"
+26-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:45:11-41
+27            android:label="@string/app_name"
+27-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:47:11-43
+28            android:theme="@style/SplashTheme" >
+28-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:46:11-45
+29            <intent-filter>
+29-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:48:11-51:27
+30                <action android:name="android.intent.action.MAIN" />
+30-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:49:15-67
+30-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:49:23-64
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:50:15-75
+32-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:50:25-72
+33            </intent-filter>
+34        </activity> <!-- Remove the intent-filter of the MainActivity and add a param android:exported="true" -->
+35        <activity
+35-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:55:9-60:36
+36            android:name="com.capitalsgame.MainActivity"
+36-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:56:11-39
+37            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+37-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:58:11-81
+38            android:exported="true"
+38-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:60:11-34
+39            android:label="@string/app_name"
+39-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:57:11-43
+40            android:windowSoftInputMode="adjustResize" />
+40-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:59:11-53
+41        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+41-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:62:7-84
+41-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:62:17-81
+42    </application>
+43
+44</manifest>
