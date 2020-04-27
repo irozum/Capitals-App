@@ -46,7 +46,6 @@ export default function Game({ route, navigation }) {
   const [lives, setLives] = useState(['life', 'life', 'life'])
   const [cStyles, setCStyles] = useState({})
   const [loading, setLoading] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     if (countries.length > 0) {
@@ -120,14 +119,6 @@ export default function Game({ route, navigation }) {
       }
     }
   }
-
-  const handleRestart = () => {
-    setCountries(countriesArray)
-    setScore(0)
-    setLives(['life', 'life', 'life'])
-    setMenuOpen(false)
-  }
-
   const listAnswers = capitals?.map((capitalName) => (
     <TouchableHighlight
       key={capitalName}
@@ -162,39 +153,6 @@ export default function Game({ route, navigation }) {
   const breakingLength = data.langName === 'English' ? 15 : 10
   styles.country.fontSize = country?.length <= breakingLength ? 50 : 35
 
-  let menu = null
-  if (menuOpen) {
-    menu = (
-      <TouchableWithoutFeedback
-        style={styles.absolute}
-        onPress={() => setMenuOpen(false)}>
-        <BlurView
-          style={styles.absolute}
-          blurType="light"
-          blurAmount={20}
-          reducedTransparencyFallbackColor="white">
-          <View style={[styles.blurView, styles.center]}>
-            <TouchableHighlight
-              onPress={() => setMenuOpen(false)}
-              style={styles.menuButtons}>
-              <Icon name="right" size={30} color="white" />
-            </TouchableHighlight>
-            <TouchableHighlight
-              onPress={() => handleRestart()}
-              style={styles.menuButtons}>
-              <Icon2 name="refresh-ccw" size={30} color="white" />
-            </TouchableHighlight>
-            <TouchableHighlight
-              onPress={() => navigation.goBack()}
-              style={styles.menuButtons}>
-              <Icon1 name="md-exit" size={30} color="white" />
-            </TouchableHighlight>
-          </View>
-        </BlurView>
-      </TouchableWithoutFeedback>
-    )
-  }
-
   // Win / lose view
   if (
     score + (3 - lives.length) === countriesArray.length ||
@@ -216,12 +174,7 @@ export default function Game({ route, navigation }) {
 
         <View style={[styles.finalBtnView]}>
           <TouchableHighlight
-            onPress={() => handleRestart()}
-            style={styles.menuButtons}>
-            <Icon2 name="refresh-ccw" size={30} color="white" />
-          </TouchableHighlight>
-          <TouchableHighlight
-            onPress={() => navigation.goBack({ test: 'test' })}
+            onPress={() => navigation.goBack()}
             style={styles.menuButtons}>
             <Icon1 name="md-exit" size={30} color="white" />
           </TouchableHighlight>
@@ -233,13 +186,13 @@ export default function Game({ route, navigation }) {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} pointerEvents={loading ? "none" : "auto"}>
       <View style={styles.container} >
         <View style={styles.topBar}>
           <Text style={styles.score}>{score}</Text>
           <TouchableOpacity
             style={styles.menu}
-            onPress={() => setMenuOpen(true)}>
+            onPress={() => navigation.navigate('PlayMenu')}>
             <Text style={styles.menuDots}>···</Text>
           </TouchableOpacity>
           <View style={styles.livesView}>{listLives}</View>
@@ -251,7 +204,6 @@ export default function Game({ route, navigation }) {
         <View style={[styles.buttonsView, styles.center]}>{listAnswers}</View>
         <View style={styles.adView} />
       </View>
-      {menu}
     </View>
   )
 }

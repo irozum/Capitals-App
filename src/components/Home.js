@@ -8,23 +8,16 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage'
-import RNRestart from 'react-native-restart'
 import { langData } from '../assets/langData'
-import { BlurView } from '@react-native-community/blur'
 import Icon from 'react-native-vector-icons/AntDesign'
 Icon.loadFont()
 
 export default function Home({ route, navigation }) {
   const data = langData[route.params.language]
 
-  const continents = data.continents
-  const languages = data.langList
-
   const [score, setScore] = useState(0)
   const [continent, setContinent] = useState(data.continents[0])
-  const [continentsSelect, setContinentsSelect] = useState(false)
   const [language, setLanguage] = useState(data.langName)
-  const [languagesSelect, setLanguagesSelect] = useState(false)
 
   const getScore = async () => {
     try {
@@ -35,19 +28,10 @@ export default function Home({ route, navigation }) {
     }
   }
 
-  const storeLanguage = async (lang) => {
-    const index = data.langList.indexOf(lang)
-    const langInEng = langData.English.langList[index]
+  const getContinent = async () => {
     try {
-      await AsyncStorage.setItem('language', langInEng)
-    } catch (e) {
-      console.log(`Something went wrong: ${e}`)
-    }
-  }
-
-  const storeContinent = async (cont) => {
-    try {
-      await AsyncStorage.setItem('continent', cont)
+      const cont = await AsyncStorage.getItem('continent')
+      setContinent(cont ? cont : 'All continents')
     } catch (e) {
       console.log(`Something went wrong: ${e}`)
     }
@@ -56,64 +40,14 @@ export default function Home({ route, navigation }) {
   useEffect(() => {
     return navigation.addListener('focus', () => {
       getScore()
+      getContinent()
     })
   }, [navigation])
-
-  const handleContChange = (cont) => {
-    setContinent(cont)
-    storeContinent(cont)
-    setContinentsSelect(false)
-  }
-
-  const handleLangChange = (lang) => {
-    setLanguage(lang)
-    storeLanguage(lang)
-    setLanguagesSelect(false)
-    RNRestart.Restart()
-  }
-
-  const listContinents = continents?.map((cont) => (
-    <TouchableOpacity key={cont} onPress={() => handleContChange(cont)}>
-      <Text style={styles.optionText}>{cont}</Text>
-    </TouchableOpacity>
-  ))
-
-  const listLanguages = languages?.map((lang) => (
-    <TouchableOpacity key={lang} onPress={() => handleLangChange(lang)}>
-      <Text style={styles.optionText}>{lang}</Text>
-    </TouchableOpacity>
-  ))
-
-  let languagesSelectView = null
-  if (continentsSelect || languagesSelect) {
-    languagesSelectView = (
-      <TouchableWithoutFeedback
-        style={styles.absolute}
-        onPress={() => {
-          continentsSelect
-            ? setContinentsSelect(false)
-            : setLanguagesSelect(false)
-        }}>
-        <BlurView
-          style={styles.absolute}
-          blurType="light"
-          blurAmount={20}
-          reducedTransparencyFallbackColor="white">
-          <View style={[styles.blurView, styles.center]}>
-            <View style={styles.flex1View} />
-            <View>{continentsSelect ? listContinents : listLanguages}</View>
-            <View style={styles.flex1View} />
-          </View>
-        </BlurView>
-      </TouchableWithoutFeedback>
-    )
-  }
 
   return (
     <View style={styles.container}>
       {/* Highest score */}
       <View style={[styles.topArea, styles.center]}>
-        {/* <Text style={styles.scoreText}>{data.highestScore}</Text> */}
         <Text style={styles.score}>{score}</Text>
       </View>
 
@@ -122,7 +56,7 @@ export default function Home({ route, navigation }) {
         <View style={[styles.selectView, styles.center]}>
           <TouchableOpacity
             style={styles.selectBtn}
-            onPress={() => setContinentsSelect(true)}>
+            onPress={() => navigation.navigate('ContinentSelect')}>
             <Text style={styles.selectText}>
               {continent} <Icon name="caretdown" size={20} />
             </Text>
@@ -144,14 +78,12 @@ export default function Home({ route, navigation }) {
       <View style={[styles.bottomView, styles.center]}>
         <TouchableOpacity
           style={styles.selectBtn}
-          onPress={() => setLanguagesSelect(true)}>
+          onPress={() => navigation.navigate('LanguageSelect')}>
           <Text style={styles.selectText}>
             {language} <Icon name="caretdown" size={20} color="black" />
           </Text>
         </TouchableOpacity>
       </View>
-      {/* {continentsSelectView} */}
-      {languagesSelectView}
     </View>
   )
 }
@@ -165,9 +97,6 @@ const styles = StyleSheet.create({
   topArea: {
     flex: 1,
   },
-  scoreText: {
-    fontSize: 30,
-  },
   score: {
     fontSize: 80,
   },
@@ -179,11 +108,6 @@ const styles = StyleSheet.create({
   },
   selectText: {
     fontSize: 23,
-  },
-  optionText: {
-    fontSize: 30,
-    marginVertical: '5%',
-    textAlign: 'center',
   },
   buttonsView: {
     flex: 1,
@@ -200,16 +124,6 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   bottomView: {
-    flex: 1,
-  },
-  absolute: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-  },
-  blurView: {
     flex: 1,
   },
   selectViewButtons: {
