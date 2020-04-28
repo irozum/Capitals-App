@@ -31,7 +31,7 @@ export default function Home({ route, navigation }) {
   const getContinent = async () => {
     try {
       const cont = await AsyncStorage.getItem('continent')
-      setContinent(cont ? cont : 'All continents')
+      setContinent(cont ? cont : 'All Continents')
     } catch (e) {
       console.log(`Something went wrong: ${e}`)
     }

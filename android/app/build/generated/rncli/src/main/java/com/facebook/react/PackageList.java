@@ -17,6 +17,10 @@ import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.cmcewen.blurview.BlurViewPackage;
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// @react-native-firebase/admob
+import io.invertase.firebase.admob.ReactNativeFirebaseAdmobPackage;
+// @react-native-firebase/app
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-reanimated
@@ -79,6 +83,8 @@ public class PackageList {
       new AsyncStoragePackage(),
       new BlurViewPackage(),
       new RNCMaskedViewPackage(),
+      new ReactNativeFirebaseAdmobPackage(),
+      new ReactNativeFirebaseAppPackage(),
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),
       new ReactNativeRestartPackage(),

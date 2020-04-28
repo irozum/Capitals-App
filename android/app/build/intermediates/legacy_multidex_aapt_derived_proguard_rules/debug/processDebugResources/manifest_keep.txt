@@ -1,0 +1,4 @@
+# Referenced at /Users/irozum/Dev/React Native/capitalsGame/android/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:19
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at /Users/irozum/Dev/React Native/capitalsGame/android/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:19
+-keep class com.capitalsgame.MainApplication { <init>(); }

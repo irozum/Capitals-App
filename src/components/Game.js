@@ -5,12 +5,11 @@ import {
   StyleSheet,
   TouchableHighlight,
   TouchableOpacity,
-  TouchableWithoutFeedback,
 } from 'react-native'
-import { BlurView } from '@react-native-community/blur'
 import AsyncStorage from '@react-native-community/async-storage'
 import { langData } from '../assets/langData'
 import { func } from '../helpers/functions'
+import { BannerAd, BannerAdSize} from '@react-native-firebase/admob';
 import Icon from 'react-native-vector-icons/AntDesign'
 import Icon1 from 'react-native-vector-icons/Ionicons'
 import Icon2 from 'react-native-vector-icons/Feather'
@@ -202,7 +201,18 @@ export default function Game({ route, navigation }) {
           <Text style={styles.country}>{country}</Text>
         </View>
         <View style={[styles.buttonsView, styles.center]}>{listAnswers}</View>
-        <View style={styles.adView} />
+        <View style={styles.adView}>
+          <BannerAd
+            unitId='ca-app-pub-6984163410331419/7286925200'
+            size={BannerAdSize.SMART_BANNER}
+            requestOptions={{
+              requestNonPersonalizedAdsOnly: true,
+            }}
+            onAdFailedToLoad={(error) => {
+              console.error('Advert failed to load: ', error)
+            }}
+          />
+        </View>
       </View>
     </View>
   )

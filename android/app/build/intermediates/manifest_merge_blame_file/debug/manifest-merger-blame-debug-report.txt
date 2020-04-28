@@ -14,63 +14,217 @@
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:33:5-67
 12-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:33:22-64
-13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.33.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/a7739ea300dde2aff608f82635cf2701/jetified-flipper-0.33.1/AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.33.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/a7739ea300dde2aff608f82635cf2701/jetified-flipper-0.33.1/AndroidManifest.xml:16:22-73
-14
-15    <application
-15-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:35:5-63:19
-16        android:name="com.capitalsgame.MainApplication"
-16-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:36:7-38
-17        android:allowBackup="false"
-17-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:40:7-34
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.1.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/4f509a65121478d6153615d7ef5b7c5f/core-1.1.0/AndroidManifest.xml:24:18-86
-19        android:debuggable="true"
-20        android:icon="@mipmap/ic_launcher"
-20-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:38:7-41
-21        android:label="@string/app_name"
-21-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:37:7-39
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:39:7-52
-23        android:theme="@style/AppTheme"
-23-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:41:7-38
-24        android:usesCleartextTraffic="true" > <!-- Add this SplashActivity -->
-24-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/debug/AndroidManifest.xml:7:18-53
-25        <activity
-25-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:44:9-52:20
-26            android:name="com.capitalsgame.SplashActivity"
-26-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:45:11-41
-27            android:label="@string/app_name"
-27-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:47:11-43
-28            android:theme="@style/SplashTheme" >
-28-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:46:11-45
-29            <intent-filter>
-29-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:48:11-51:27
-30                <action android:name="android.intent.action.MAIN" />
-30-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:49:15-67
-30-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:49:23-64
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:50:15-75
-32-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:50:25-72
-33            </intent-filter>
-34        </activity> <!-- Remove the intent-filter of the MainActivity and add a param android:exported="true" -->
-35        <activity
-35-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:55:9-60:36
-36            android:name="com.capitalsgame.MainActivity"
-36-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:56:11-39
-37            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-37-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:58:11-81
-38            android:exported="true"
-38-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:60:11-34
-39            android:label="@string/app_name"
-39-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:57:11-43
-40            android:windowSoftInputMode="adjustResize" />
-40-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:59:11-53
-41        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-41-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:62:7-84
-41-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:62:17-81
-42    </application>
-43
-44</manifest>
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-68
+13-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-65
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-79
+14-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-76
+15    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+15-->[com.facebook.flipper:flipper:0.33.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/a7739ea300dde2aff608f82635cf2701/jetified-flipper-0.33.1/AndroidManifest.xml:16:5-76
+15-->[com.facebook.flipper:flipper:0.33.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/a7739ea300dde2aff608f82635cf2701/jetified-flipper-0.33.1/AndroidManifest.xml:16:22-73
+16    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+16-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:26:5-110
+16-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:26:22-107
+17    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+17-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:26:5-82
+17-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:26:22-79
+18
+19    <application
+19-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:35:5-63:19
+20        android:name="com.capitalsgame.MainApplication"
+20-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:36:7-38
+21        android:allowBackup="false"
+21-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:40:7-34
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.1.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/4f509a65121478d6153615d7ef5b7c5f/core-1.1.0/AndroidManifest.xml:24:18-86
+23        android:debuggable="true"
+24        android:icon="@mipmap/ic_launcher"
+24-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:38:7-41
+25        android:label="@string/app_name"
+25-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:37:7-39
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:39:7-52
+27        android:theme="@style/AppTheme"
+27-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:41:7-38
+28        android:usesCleartextTraffic="true" > <!-- Add this SplashActivity -->
+28-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/debug/AndroidManifest.xml:7:18-53
+29        <activity
+29-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:44:9-52:20
+30            android:name="com.capitalsgame.SplashActivity"
+30-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:45:11-41
+31            android:label="@string/app_name"
+31-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:47:11-43
+32            android:theme="@style/SplashTheme" >
+32-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:46:11-45
+33            <intent-filter>
+33-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:48:11-51:27
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:49:15-67
+34-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:49:23-64
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:50:15-75
+36-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:50:25-72
+37            </intent-filter>
+38        </activity> <!-- Remove the intent-filter of the MainActivity and add a param android:exported="true" -->
+39        <activity
+39-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:55:9-60:36
+40            android:name="com.capitalsgame.MainActivity"
+40-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:56:11-39
+41            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+41-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:58:11-81
+42            android:exported="true"
+42-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:60:11-34
+43            android:label="@string/app_name"
+43-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:57:11-43
+44            android:windowSoftInputMode="adjustResize" />
+44-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:59:11-53
+45        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+45-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:62:7-84
+45-->/Users/irozum/Dev/React Native/capitalsGame/android/app/src/main/AndroidManifest.xml:62:17-81
+46
+47        <meta-data
+47-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:70
+48            android:name="com.google.android.gms.ads.APPLICATION_ID"
+48-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-69
+49            android:value="ca-app-pub-6984163410331419~1104660239" />
+49-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-67
+50        <meta-data
+50-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:9-21:37
+51            android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
+51-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-81
+52            android:value="false" />
+52-->[:react-native-firebase_admob] /Users/irozum/Dev/React Native/capitalsGame/node_modules/@react-native-firebase/admob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-34
+53
+54        <receiver
+54-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:29:9-33:20
+55            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+55-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:30:13-85
+56            android:enabled="true"
+56-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:31:13-35
+57            android:exported="false" >
+57-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:32:13-37
+58        </receiver>
+59        <receiver
+59-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:34:9-42:20
+60            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+60-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:35:13-100
+61            android:enabled="true"
+61-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:36:13-35
+62            android:exported="true"
+62-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:37:13-36
+63            android:permission="android.permission.INSTALL_PACKAGES" >
+63-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:38:13-69
+64            <intent-filter>
+64-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:39:13-41:29
+65                <action android:name="com.android.vending.INSTALL_REFERRER" />
+65-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:40:17-79
+65-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:40:25-76
+66            </intent-filter>
+67        </receiver>
+68
+69        <service
+69-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:44:9-47:40
+70            android:name="com.google.android.gms.measurement.AppMeasurementService"
+70-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:45:13-84
+71            android:enabled="true"
+71-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:46:13-35
+72            android:exported="false" />
+72-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:47:13-37
+73        <service
+73-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:48:9-52:72
+74            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+74-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:49:13-87
+75            android:enabled="true"
+75-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:50:13-35
+76            android:exported="false"
+76-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:51:13-37
+77            android:permission="android.permission.BIND_JOB_SERVICE" />
+77-->[com.google.android.gms:play-services-measurement:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/7f313170951d8d542be436d2b0b62c2b/play-services-measurement-17.2.1/AndroidManifest.xml:52:13-69
+78        <service
+78-->[com.google.android.gms:play-services-measurement-api:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/4aa5ae04f1ddddf6d7f3b3914d35554c/play-services-measurement-api-17.2.1/AndroidManifest.xml:27:9-33:19
+79            android:name="com.google.firebase.components.ComponentDiscoveryService"
+79-->[com.google.android.gms:play-services-measurement-api:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/4aa5ae04f1ddddf6d7f3b3914d35554c/play-services-measurement-api-17.2.1/AndroidManifest.xml:28:13-84
+80            android:exported="false" >
+80-->[com.google.android.gms:play-services-measurement-api:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/4aa5ae04f1ddddf6d7f3b3914d35554c/play-services-measurement-api-17.2.1/AndroidManifest.xml:29:13-37
+81            <meta-data
+81-->[com.google.android.gms:play-services-measurement-api:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/4aa5ae04f1ddddf6d7f3b3914d35554c/play-services-measurement-api-17.2.1/AndroidManifest.xml:30:13-32:85
+82                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+82-->[com.google.android.gms:play-services-measurement-api:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/4aa5ae04f1ddddf6d7f3b3914d35554c/play-services-measurement-api-17.2.1/AndroidManifest.xml:31:17-139
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.android.gms:play-services-measurement-api:17.2.1] /Users/irozum/.gradle/caches/transforms-2/files-2.1/4aa5ae04f1ddddf6d7f3b3914d35554c/play-services-measurement-api-17.2.1/AndroidManifest.xml:32:17-82
+84            <meta-data
+84-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:32:13-34:85
+85                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+85-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:33:17-96
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:34:17-82
+87        </service> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+88        <activity
+88-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:29:9-33:64
+89            android:name="com.google.android.gms.ads.AdActivity"
+89-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:30:13-65
+90            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+90-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:31:13-122
+91            android:exported="false"
+91-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:32:13-37
+92            android:theme="@android:style/Theme.Translucent" />
+92-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:33:13-61
+93
+94        <provider
+94-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:35:9-39:39
+95            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+95-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:36:13-76
+96            android:authorities="com.capitalsgame.mobileadsinitprovider"
+96-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:37:13-73
+97            android:exported="false"
+97-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:38:13-37
+98            android:initOrder="100" />
+98-->[com.google.android.gms:play-services-ads-lite:18.3.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/1c1990c460b321a9afb0af048d199f7b/play-services-ads-lite-18.3.0/AndroidManifest.xml:39:13-36
+99
+100        <receiver
+100-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:37:9-44:20
+101            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+101-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:38:13-78
+102            android:exported="true"
+102-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:39:13-36
+103            android:permission="com.google.android.c2dm.permission.SEND" >
+103-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:40:13-73
+104            <intent-filter>
+104-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:41:13-43:29
+105                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+105-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:42:17-81
+105-->[com.google.firebase:firebase-iid:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/0761222badfb3405edc6a9223e661314/firebase-iid-19.0.0/AndroidManifest.xml:42:25-78
+106            </intent-filter>
+107        </receiver>
+108
+109        <provider
+109-->[com.google.firebase:firebase-common:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/8b2e7b74215531a51dd11e311e8f0910/firebase-common-19.0.0/AndroidManifest.xml:12:9-16:39
+110            android:name="com.google.firebase.provider.FirebaseInitProvider"
+110-->[com.google.firebase:firebase-common:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/8b2e7b74215531a51dd11e311e8f0910/firebase-common-19.0.0/AndroidManifest.xml:13:13-77
+111            android:authorities="com.capitalsgame.firebaseinitprovider"
+111-->[com.google.firebase:firebase-common:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/8b2e7b74215531a51dd11e311e8f0910/firebase-common-19.0.0/AndroidManifest.xml:14:13-72
+112            android:exported="false"
+112-->[com.google.firebase:firebase-common:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/8b2e7b74215531a51dd11e311e8f0910/firebase-common-19.0.0/AndroidManifest.xml:15:13-37
+113            android:initOrder="100" />
+113-->[com.google.firebase:firebase-common:19.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/8b2e7b74215531a51dd11e311e8f0910/firebase-common-19.0.0/AndroidManifest.xml:16:13-36
+114
+115        <activity
+115-->[com.google.android.gms:play-services-base:17.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/6d45d9e0505112f0eec54f8796757f91/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+116            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+116-->[com.google.android.gms:play-services-base:17.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/6d45d9e0505112f0eec54f8796757f91/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+117            android:exported="false"
+117-->[com.google.android.gms:play-services-base:17.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/6d45d9e0505112f0eec54f8796757f91/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+118            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+118-->[com.google.android.gms:play-services-base:17.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/6d45d9e0505112f0eec54f8796757f91/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+119
+120        <meta-data
+120-->[com.google.android.gms:play-services-basement:17.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/046eced7fed1ec3db7188e26dfcf9ce2/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+121            android:name="com.google.android.gms.version"
+121-->[com.google.android.gms:play-services-basement:17.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/046eced7fed1ec3db7188e26dfcf9ce2/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+122            android:value="@integer/google_play_services_version" />
+122-->[com.google.android.gms:play-services-basement:17.0.0] /Users/irozum/.gradle/caches/transforms-2/files-2.1/046eced7fed1ec3db7188e26dfcf9ce2/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+123    </application>
+124
+125</manifest>
