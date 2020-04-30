@@ -11,15 +11,13 @@ export default function LanguageSelect({ route, navigation }) {
     const index = languages.indexOf(lang)
     const langInEng = langData.English.langList[index]
     storeContinent(langData[langInEng].continents[0])
-    storeLanguage(lang)
+    storeLanguage(langInEng)
     RNRestart.Restart()
   }
 
-  const storeLanguage = async (lang) => {
-    const index = languages.indexOf(lang)
-    const langInEng = langData.English.langList[index]
+  const storeLanguage = async lang => {
     try {
-      await AsyncStorage.setItem('language', langInEng)
+      await AsyncStorage.setItem('language', lang)
     } catch (e) {
       console.log(`Something went wrong: ${e}`)
     }
