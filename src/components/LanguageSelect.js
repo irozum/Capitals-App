@@ -17,7 +17,7 @@ export default function LanguageSelect({ route, navigation }) {
 
   const setLanguage = async lang => {
     try {
-      await AsyncStorage.setItem('lang', lang)
+      await AsyncStorage.setItem('language', lang)
     } catch (e) {
       console.log(`Something went wrong: ${e}`)
     }

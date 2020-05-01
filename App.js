@@ -19,7 +19,7 @@ export default function App() {
   const [loading, setLoading] = useState(true)
 
   const getLanguage = async () => {
-    const lang = await AsyncStorage.getItem('lang')
+    const lang = await AsyncStorage.getItem('language')
     setLanguage(lang ? lang : 'English')
     setLoading(false)
   }

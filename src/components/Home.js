@@ -13,10 +13,10 @@ Icon.loadFont()
 
 export default function Home({ route, navigation }) {
   const data = langData[route.params.language]
+  const language = data.langName
 
   const [score, setScore] = useState(0)
   const [continent, setContinent] = useState(data.continents[0])
-  const [language, setLanguage] = useState(data.langName)
 
   const getScore = async () => {
     try {

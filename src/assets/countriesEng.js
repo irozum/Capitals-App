@@ -456,7 +456,7 @@ export default Countries = {
     },
     {
       country: 'Belgium',
-      capital: 'Bruxelles [Brussels]',
+      capital: 'Brussels',
     },
     {
       country: 'Bosnia and Herzegovina',
@@ -496,7 +496,7 @@ export default Countries = {
     },
     {
       country: 'Finland',
-      capital: 'Helsinki [Helsingfors]',
+      capital: 'Helsinki',
     },
     {
       country: 'France',
@@ -516,11 +516,11 @@ export default Countries = {
     },
     {
       country: 'Greece',
-      capital: 'Athenai',
+      capital: 'Athens',
     },
     {
-      country: 'Holy See (Vatican City State)',
-      capital: 'Citt',
+      country: 'Holy See',
+      capital: 'Vatican City',
     },
     {
       country: 'Hungary',
@@ -588,11 +588,11 @@ export default Countries = {
     },
     {
       country: 'Portugal',
-      capital: 'Lisboa',
+      capital: 'Lisbon',
     },
     {
       country: 'Romania',
-      capital: 'Bucuresti',
+      capital: 'Bucharest',
     },
     {
       country: 'Russian Federation',

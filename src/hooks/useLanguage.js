@@ -6,7 +6,7 @@ export function useLanguage() {
   const [loading, setLoading] = useState(true)
 
   async function getLanguage() {
-    const language = await AsyncStorage.getitem('lang')
+    const language = await AsyncStorage.getItem('language')
     if (language) {
       setLang(language);
     } else {
