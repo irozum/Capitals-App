@@ -5,7 +5,6 @@ import {
   StyleSheet,
   TouchableHighlight,
   TouchableOpacity,
-  TouchableWithoutFeedback,
 } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage'
 import { langData } from '../assets/langData'
